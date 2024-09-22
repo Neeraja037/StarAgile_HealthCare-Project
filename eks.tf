@@ -8,12 +8,21 @@ module "eks" {
   cluster_addons = {
     coredns = {
       most_recent = true
+      # Set resolve conflicts attributes
+      resolve_conflicts_on_create = "OVERWRITE"
+      resolve_conflicts_on_update  = "OVERWRITE"
     }
     kube-proxy = {
       most_recent = true
+      # Set resolve conflicts attributes
+      resolve_conflicts_on_create = "OVERWRITE"
+      resolve_conflicts_on_update  = "OVERWRITE"
     }
     vpc-cni = {
       most_recent = true
+      # Set resolve conflicts attributes
+      resolve_conflicts_on_create = "OVERWRITE"
+      resolve_conflicts_on_update  = "OVERWRITE"
     }
   }
 
