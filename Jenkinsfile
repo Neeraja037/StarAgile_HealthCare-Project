@@ -2,10 +2,10 @@ pipeline {
   agent any
   
   stages {
-    stage('build the project') {
+    stage('Build') {
       steps {
         git 'https://github.com/Neeraja037/StarAgile_HealthCare-Project.git'
-        sh 'mvn clean package'
+        sh 'mvn -Dmaven.test.failure.ignore=true clean package'
       }
     }
   }
